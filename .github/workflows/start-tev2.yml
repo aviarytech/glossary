@@ -13,7 +13,7 @@ jobs:
         with:
           owner: aviarytech
           repo: tev2-test
-          github_token: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           github_user: brianorwhatever
           workflow_file_name: main.yml
           ref: master
