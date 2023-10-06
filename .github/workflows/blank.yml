@@ -1,0 +1,24 @@
+name: Test TEv2
+
+on:
+  gollum:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: aviarytech
+          repo: tev2-test
+          github_token: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          github_user: brianorwhatever
+          workflow_file_name: main.yml
+          ref: master
+          wait_interval: 10
+          client_payload: '{}'
+          propagate_failure: false
+          trigger_workflow: true
+          wait_workflow: true
